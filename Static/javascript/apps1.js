@@ -4,7 +4,7 @@ const tableData = data;
 // Reference the HTML table using d3
 var tbody = d3.select("tbody");
 
-function buildTable(data) {
+function tableBuild(data) {
     // First, clear out any existing data
     tbody.html("");
     // Next, loop through each object in the data
@@ -36,9 +36,9 @@ function handleClick() {
     // Rebuild the table using filtered data
     // @NOTE: If no date was entered, then filteredData will
     // just be the original tableData.
-    buildTable(filteredData);
+    tableBuild(filteredData);
 }
 // Attach an event to listen for the form button
 d3.selectAll("#filter-btn").on("click", handleClick);
 // Build the table when the page loads
-buildTable(tableData);
+tableBuild(tableData);
